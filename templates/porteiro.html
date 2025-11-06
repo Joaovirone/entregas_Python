@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel do Porteiro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style_2.css') }}">
+</head>
+<body>
+  <h1>📋 Entregas Registradas</h1>
+
+  {% if entregas %}
+    {% for e in entregas %}
+      <div class="entrega">
+        <p><b>Entregador:</b> {{ e.nome_entregador }}</p>
+        <p><b>Morador:</b> {{ e.morador }}</p>
+        <p><b>Bloco:</b> {{ e.bloco }} - <b>Apartamento:</b> {{ e.apartamento }}</p>
+        <p><b>Hora:</b> {{ e.data_hora }}</p>
+        <img src="{{ e.foto_url }}" alt="Foto da entrega">
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>Nenhuma entrega registrada ainda.</p>
+  {% endif %}
+
+  <a href="/">Registrar nova entrega</a>
+</body>
+</html>
