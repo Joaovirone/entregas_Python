@@ -3,47 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Entrega na Portaria</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 50px;
-      background-color: #f8f9fa;
-    }
-    form {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      max-width: 400px;
-      margin: auto;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 5px 0;
-    }
-    button {
-      background-color: #28a745;
-      color: white;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #218838;
-    }
-  </style>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <h2>Registro de Entrega</h2>
-  <form method="POST" action="/">
-    <label>Nome do Entregador:</label>
+
+  <form method="POST" action="/" enctype="multipart/form-data">
+
+    <label>Nome do Entregador</label>
     <input type="text" name="nome" required>
-    
-    <label>Apartamento:</label>
+
+    <label>Nome do Cliente</label>
+    <input type="text" name="cliente" required>
+
+    <label>Apartamento</label>
     <input type="text" name="apartamento" required>
     
+    <label>Bloco</label>
+    <input type="text" name="bloco" required>
+
+    <label>Foto do Produto: </label>
+    <input id="foto_produto" type="file" name="foto" accept="image/*" capture="environment" required>
+    <noscript><button type>Enviar Foto</button></noscript>
+
     <button type="submit">Registrar Entrega</button>
   </form>
 </body>
