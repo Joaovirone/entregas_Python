@@ -1,0 +1,37 @@
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+instance/
+.env
+.venv/
+venv/
+env/
+
+# === Flask Uploads ===
+static/uploads/
+*.jpg
+*.jpeg
+*.png
+
+# === Docker ===
+*.log
+.docker/
+docker-compose.override.yml
+# Volumes e cache temporário
+volumes/
+n8n_data/
+shared/
+
+# === VSCode / IDEs ===
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === Sistema operacional ===
+.DS_Store
+Thumbs.db

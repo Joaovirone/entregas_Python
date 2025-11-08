@@ -1,0 +1,17 @@
+# Usa uma imagem leve e oficial do Python 3.13
+FROM python:3.13-slim
+
+# Define o diretório de trabalho dentro do container
+WORKDIR /app
+
+# Copia os arquivos do projeto para dentro do container
+COPY . /app
+
+# Instala as dependências do Python (Flask, Requests, etc.)
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expõe a porta onde o Flask vai rodar
+EXPOSE 5000
+
+# Comando padrão para rodar o Flask
+CMD ["python", "app.py"]
